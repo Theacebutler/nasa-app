@@ -17,6 +17,12 @@ export default function Footer(props) {
                 onClick={handelToggleModel}>
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
+                {/* rendom display */}
+                {/* <button type="button"
+                onClick={handelToggleModel}>
+                    <i class="fa-solid fa-shuffle"></i>
+                </button> */}
+
         </div>
     )
 }

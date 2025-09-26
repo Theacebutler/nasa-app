@@ -6,7 +6,7 @@ import Main from './componentes/Main'
 import Footer from './componentes/Footer'
 import SideBar from './componentes/SideBar'
 
-import { get_image } from './services/nasa-api'
+import { get_image, get_random_image } from './services/nasa-api'
 
 function App() {
 
