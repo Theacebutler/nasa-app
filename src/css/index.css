@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root,
+  #root {
+    color: white;
+    background-color: #1a1a1ae8;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  :root,
+  #root {
+    color: #1a1a1ae8;
+    background-color: white;
+
+  }
+}

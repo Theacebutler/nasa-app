@@ -1,33 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './css/App.css'
+
+import Main from './componentes/Main'
+import Footer from './componentes/Footer'
+import SideBar from './componentes/SideBar'
+
+import { get_image } from './services/nasa-api'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [showModel, setShowModel] = useState(false)
+
+  const [data, setData] = useState([])
+
+  function handelToggleModel() {
+    setShowModel(!showModel)
+  }
+
+//! the fetch in called 2 times
+  useEffect(() => {
+    async function get_image_from_api(){
+      try {
+        const IPOD = await get_image()
+        setData(IPOD)
+        console.log(IPOD)
+
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    get_image_from_api();
+  
+  }, []);
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Main handelToggleModel={handelToggleModel} data={data}/>
+      {showModel && (
+        <SideBar handelToggleModel={handelToggleModel} data={data}/>
+      )}
+      <Footer handelToggleModel={handelToggleModel} data={data}/>
     </>
   )
 }
