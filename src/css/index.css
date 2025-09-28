@@ -5,6 +5,27 @@
   color: white;
 }
 
+.loading {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  align-self: center;
+}
+
+.fa-gear{
+  opacity: 0.3;
+  font-size: 10rem;
+  animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(460deg);
+  }
+}
 #root {
   display: flex;
   min-height: 100vh;

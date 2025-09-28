@@ -3,7 +3,7 @@ import '../css/Footer.css'
 
 export default function Footer(props) {
 
-    const { handelToggleModel, data, setData } = props
+    const { handelToggleModel, data, setData, setLoading } = props
 
     return (
         <div className="footer">
@@ -15,7 +15,7 @@ export default function Footer(props) {
                 <h1>{data.date}</h1>
             </div>
             <div className="btns">
-            <Random setData={setData} />
+            <Random setData={setData} setLoading={setLoading}/>
             <button type="button"
                 onClick={handelToggleModel}>
                 <i class="fa-solid fa-circle-info"></i>
