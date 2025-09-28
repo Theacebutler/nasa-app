@@ -6,7 +6,7 @@ import Main from './componentes/Main'
 import Footer from './componentes/Footer'
 import SideBar from './componentes/SideBar'
 
-import { get_image, get_random_image } from './services/nasa-api'
+import { get_image } from './services/nasa-api'
 
 function App() {
 
@@ -17,14 +17,12 @@ function App() {
   function handelToggleModel() {
     setShowModel(!showModel)
   }
-
-//! the fetch in called 2 times
+  
   useEffect(() => {
     async function get_image_from_api(){
       try {
-        const IPOD = await get_image()
-        setData(IPOD)
-        console.log(IPOD)
+        const data = await get_image()
+        setData(data)
 
       } catch (err) {
         console.log(err)
@@ -41,7 +39,7 @@ function App() {
       {showModel && (
         <SideBar handelToggleModel={handelToggleModel} data={data}/>
       )}
-      <Footer handelToggleModel={handelToggleModel} data={data}/>
+      <Footer handelToggleModel={handelToggleModel} data={data} setData={setData} />
     </>
   )
 }

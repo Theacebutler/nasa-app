@@ -1,9 +1,10 @@
+import Random from './Random'
 import '../css/Footer.css'
 
 export default function Footer(props) {
 
-    const { handelToggleModel, data } = props
-    
+    const { handelToggleModel, data, setData } = props
+
     return (
         <div className="footer">
             <div className="gradient"></div>
@@ -13,15 +14,13 @@ export default function Footer(props) {
                 </h2>
                 <h1>{data.date}</h1>
             </div>
-                <button type="button"
+            <div className="btns">
+            <Random setData={setData} />
+            <button type="button"
                 onClick={handelToggleModel}>
-                    <i class="fa-solid fa-circle-info"></i>
-                </button>
-                {/* rendom display */}
-                {/* <button type="button"
-                onClick={handelToggleModel}>
-                    <i class="fa-solid fa-shuffle"></i>
-                </button> */}
+                <i class="fa-solid fa-circle-info"></i>
+            </button>
+            </div>
 
         </div>
     )
