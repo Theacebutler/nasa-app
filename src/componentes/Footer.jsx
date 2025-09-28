@@ -1,3 +1,4 @@
+import Like from './Like'
 import Random from './Random'
 import '../css/Footer.css'
 
@@ -15,11 +16,12 @@ export default function Footer(props) {
                 <h1>{data.date}</h1>
             </div>
             <div className="btns">
-            <Random setData={setData} />
-            <button type="button"
-                onClick={handelToggleModel}>
-                <i class="fa-solid fa-circle-info"></i>
-            </button>
+                <Like />
+                <Random setData={setData} />
+                <button type="button"
+                    onClick={handelToggleModel}>
+                    <i class="fa-solid fa-circle-info"></i>
+                </button>
             </div>
 
         </div>
