@@ -13,13 +13,13 @@ function App() {
   const [showModel, setShowModel] = useState(false)
   const [showLiked, setShowLiked] = useState(true)
   const [data, setData] = useState([])
-
+  const [liked, setLiked] = useState()
   function handelToggleModel() {
     setShowModel(!showModel)
   }
-  
+
   useEffect(() => {
-    async function get_image_from_api(){
+    async function get_image_from_api() {
       try {
         const data = await get_image()
         setData(data)
@@ -29,18 +29,18 @@ function App() {
       }
     }
     get_image_from_api();
-  
+
   }, []);
 
 
   return (
     <>
-    {showLiked && <LikedImages />}
-      <Main handelToggleModel={handelToggleModel} data={data}/>
+      {showLiked && <LikedImages liked={liked}/>}
+      <Main handelToggleModel={handelToggleModel} data={data} />
       {showModel && (
-        <SideBar handelToggleModel={handelToggleModel} data={data}/>
+        <SideBar handelToggleModel={handelToggleModel} data={data} />
       )}
-      <Footer handelToggleModel={handelToggleModel} data={data} setData={setData} />
+      <Footer handelToggleModel={handelToggleModel} data={data} setData={setData} setLiked={setLiked} liked={liked}/>
     </>
   )
 }

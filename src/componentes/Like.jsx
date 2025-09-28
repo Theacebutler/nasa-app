@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import '../css/Like.css'
 
-export default function Like() {
+export default function Like(props) {
+    const { setLiked, data } = props
     const [fav, setFav] = useState(false)
     const like = () => {
         // switch the fav var
         setFav(!fav)
+        setLiked(data.date)
         // add the image to a 'liked' collection in local storeg
     }
     return (

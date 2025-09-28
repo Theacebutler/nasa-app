@@ -30,15 +30,13 @@
     border-top-right-radius: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 1rem;
     overflow-y: scroll;
 }
 
-.image {
-    height: 10rem;
-    width: 100%;
-    border: 1px solid;
-    border-radius: 30px;
-    box-shadow: 1px 15px 25px 1px black;
-    background-color: gray;
+
+.empty-liked {
+    place-self: center;
+    font-size: 2rem;
 }

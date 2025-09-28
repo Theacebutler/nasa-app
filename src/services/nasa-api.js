@@ -15,3 +15,13 @@ export async function get_random_image() {
     const data = await respone.json();
     return data[0]
 } 
+
+
+
+// TODO add a api to get a image based on the date
+
+export async function get_image_with_date(date) {
+    const respone = await fetch(url + '&date=' + date);
+    const data = await respone.json()
+    return data
+}
