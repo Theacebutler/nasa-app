@@ -3,7 +3,6 @@ const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
 const random = '&count=1'
 
 
-
 export async function get_image() {
     const respone = await fetch(url);
     const data = await respone.json()
