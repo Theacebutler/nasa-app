@@ -10,10 +10,10 @@
 
   
 ## 🔴 It's Live!
-Check it out at [https://nasa-image-of-te-day.onrender.com/](https://nasa-image-of-te-day.onrender.com/)
+Check it out at [https://nasa-image-of-te-day.onrender.com](https://nasa-image-of-te-day.onrender.com/)
 
 ## ⏳Coming soon 
-- Get a random image
+- ~~Get a random image~~ 🟢 Done!
 - Save and like imgaes
 
 ## 💡Inspired by
