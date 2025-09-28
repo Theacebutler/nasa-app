@@ -1,0 +1,42 @@
+.liked-images {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    height: 80%;
+    width: 50%;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    z-index: 15;
+    margin-right: auto;
+    background-color: #1a1a1a5a;
+    border-radius: 30px;
+    box-shadow: 1px 15px 25px 1px black;
+    /* overflow-y: scroll; */
+}
+
+.liked-images h2 {
+    margin: 1rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px solid;
+    width: 80%;
+}
+
+.images {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+
+.image {
+    height: 10rem;
+    width: 100%;
+    border: 1px solid;
+    box-shadow: 1px 15px 25px 1px black;
+    background-color: gray;
+}

@@ -5,13 +5,13 @@ import './css/App.css'
 import Main from './componentes/Main'
 import Footer from './componentes/Footer'
 import SideBar from './componentes/SideBar'
-
+import LikedImages from './componentes/LikedImages'
 import { get_image } from './services/nasa-api'
 
 function App() {
 
   const [showModel, setShowModel] = useState(false)
-
+  const [showLiked, setShowLiked] = useState(true)
   const [data, setData] = useState([])
 
   function handelToggleModel() {
@@ -35,6 +35,7 @@ function App() {
 
   return (
     <>
+    {showLiked && <LikedImages />}
       <Main handelToggleModel={handelToggleModel} data={data}/>
       {showModel && (
         <SideBar handelToggleModel={handelToggleModel} data={data}/>
