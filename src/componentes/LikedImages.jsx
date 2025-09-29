@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../css/LikedImages.css'
 import { get_image_with_date } from '../services/nasa-api'
+import { getItem, setItem } from '../utils/localStorage'
 import LikedImage from './LikedImage'
 
 
@@ -15,7 +16,7 @@ export default function LikedImages(props) {
     useEffect(() => {
         if (!liked) return
         get_image_with_date(liked).then(data => {
-            setImages((images)=> [...images, data])
+            setImages(() => [...images, data])
         }).catch(err => {
             console.log(err)
         })
@@ -24,13 +25,13 @@ export default function LikedImages(props) {
     return (
         <div className='liked-images'>
             <h2>Your Favorite Images</h2>
-            {images ? (
+            {images.length > 0 ? (
                 <div className="images">
-                {
-                    images.map((image, index)=> (
-                        <LikedImage image={image} index={index}/>
-                    ))
-                }
+                    {
+                        images.map((image, index) => (
+                            <LikedImage image={image} key={index} />
+                        ))
+                    }
                 </div>
             ) : (
                 <div className="empty-liked">

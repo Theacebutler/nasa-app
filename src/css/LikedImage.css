@@ -1,4 +1,5 @@
 .image {
+    position: relative;
     max-height: 10rem;
     width: 100%;
     border: 1px solid;
@@ -12,3 +13,11 @@
     width: 100%;
     border-radius: 30px;
 }
+
+/* div button i {11
+    position: absolute;
+    top: .6rem;
+    left: .6rem;
+    color: red;
+    font-size: 2rem;
+} */

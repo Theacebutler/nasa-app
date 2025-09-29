@@ -5,7 +5,7 @@ import '../css/Footer.css'
 
 export default function Footer(props) {
 
-    const { handelToggleModel, data, setData, setLiked } = props
+    const { handelToggleModel, data, setData } = props
 
     return (
         <div className="footer">
@@ -17,9 +17,9 @@ export default function Footer(props) {
                 <h1>{data.date}</h1>
             </div>
             <div className="btns">
-                <Like setLiked={setLiked} data={data}/>
+                <Like data={data} />
                 <Random setData={setData} />
-                <Info handelToggleModel={handelToggleModel}/>
+                <Info handelToggleModel={handelToggleModel} />
             </div>
 
         </div>

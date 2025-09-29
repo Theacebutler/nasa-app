@@ -7,13 +7,14 @@ import Footer from './componentes/Footer'
 import SideBar from './componentes/SideBar'
 import LikedImages from './componentes/LikedImages'
 import { get_image } from './services/nasa-api'
+import { LikesProvider } from './contexts/LikedContexts'
 
 function App() {
 
-  const [showModel, setShowModel] = useState(false)
-  const [showLiked, setShowLiked] = useState(true)
-  const [data, setData] = useState([])
-  const [liked, setLiked] = useState()
+  const [showModel, setShowModel] = useState(false);
+  const [showLiked, setShowLikd] = useState(true);
+  const [data, setData] = useState([]);
+
   function handelToggleModel() {
     setShowModel(!showModel)
   }
@@ -29,19 +30,18 @@ function App() {
       }
     }
     get_image_from_api();
-
   }, []);
 
 
   return (
-    <>
-      {showLiked && <LikedImages liked={liked}/>}
+    <LikesProvider>
+      {showLiked && <LikedImages />}
       <Main handelToggleModel={handelToggleModel} data={data} />
       {showModel && (
         <SideBar handelToggleModel={handelToggleModel} data={data} />
       )}
-      <Footer handelToggleModel={handelToggleModel} data={data} setData={setData} setLiked={setLiked} liked={liked}/>
-    </>
+      <Footer handelToggleModel={handelToggleModel} data={data} setData={setData}/>
+    </LikesProvider>
   )
 }
 
