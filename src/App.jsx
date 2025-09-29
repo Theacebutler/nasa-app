@@ -22,11 +22,20 @@ function App() {
 
   useEffect(() => {
     async function get_image_from_api() {
-      // setLoading(true)
+
+      const Today = (new Date()).toDateString();
+      const todayKey = `NASA-${Today}`
+      if (localStorage.getItem(todayKey)){
+        const localData = JSON.parse(localStorage.getItem(todayKey))
+        setData(localData)
+        return
+      }
+      localStorage.clear()
+
       try {
         const data = await get_image()
         setData(data)
-
+        localStorage.setItem(todayKey, JSON.stringify(data))
       } catch (err) {
         console.log(err)
       }
