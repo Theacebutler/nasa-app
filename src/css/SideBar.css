@@ -34,10 +34,23 @@
   overflow-y: scroll;
   /* scrollbar-track-color: transparent; */
 }
+
+.wikiUrl {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  text-decoration: none;
+}
+
+.wikiUrl i {
+  font-size: 2rem;
+  margin-right: .5rem;
+}
+
 .btn {
   width: fit-content;
-
 }
+
 button {
   background-color: transparent;
   border: none;
