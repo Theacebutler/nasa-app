@@ -1,7 +1,24 @@
+import wiki, { pageError } from "wikipedia";
+
 const API_KEY = import.meta.env.VITE_NASA_API_KEY
 const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
 const random = '&count=1'
 
+
+export async function get_wiki(title) {
+    try {
+        const pageUrl = await wiki.page(title)
+        if (!String(pageUrl).includes('Undefined')) {
+            console.log(pageUrl.fullurl)
+            return pageUrl
+        } else {
+            console.error(`no wikipedia page for ${title}`)
+        }
+
+    } catch (err) {
+        console.error(err)
+    }
+}
 
 export async function get_image() {
     const respone = await fetch(url);
