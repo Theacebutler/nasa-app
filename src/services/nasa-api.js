@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_NASA_API_KEY
+const API_KEY = "NWUMAKeQatwwDp9D7i0fWr7VyPwu5qDfDexveqQ5"
 const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
 const random = '&count=1'
 
